@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeGuard AI — AI Code Review, Testing & Debugging</title>
+  <meta
+    name="description"
+    content="CodeGuard AI reviews pull requests, finds likely bugs and security issues, generates missing tests, and helps debug CI failures."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #070b14;
+      color: #e8edf7;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      padding: 28px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: #4ade80;
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      background: rgba(74, 222, 128, 0.08);
+      color: #4ade80;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #4ade80, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      font-size: 18px;
+      color: #a7b4c9;
+      margin-bottom: 34px;
+    }
+
+    .waitlist-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      padding: 26px;
+      max-width: 560px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .waitlist-card h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .waitlist-card p {
+      color: #a7b4c9;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input[type="email"] {
+      flex: 1;
+      min-width: 230px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input[type="email"]:focus {
+      border-color: #4ade80;
+    }
+
+    button {
+      padding: 14px 22px;
+      border: none;
+      border-radius: 12px;
+      background: #4ade80;
+      color: #052e16;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    .small-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #7d8ba1;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      padding: 30px 0 70px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #a7b4c9;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0;
+      color: #7d8ba1;
+      font-size: 14px;
+    }
+
+    .success {
+      display: none;
+      margin-top: 14px;
+      color: #4ade80;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">CodeGuard<span>AI</span></div>
+    </header>
+
+    <section class="hero">
+      <div class="badge">Early access</div>
+
+      <h1>
+        AI code review that finds <span class="highlight">real issues</span>
+        before production.
+      </h1>
+
+      <p class="subtitle">
+        CodeGuard AI reviews GitHub pull requests, detects likely bugs and
+        security issues, generates missing tests, and helps debug CI failures—
+        with evidence, not vague AI comments.
+      </p>
+
+      <div class="waitlist-card">
+        <h2>Join the early-access waitlist</h2>
+        <p>
+          Be among the first teams to connect a GitHub repository and test
+          CodeGuard AI on real pull requests.
+        </p>
+
+        <form
+          action=https://formspree.io/f/mvkzjwpy
+          method="POST"
+          id="waitlist-form"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="you@company.com"
+            required
+          />
+          <button type="submit">Join waitlist</button>
+        </form>
+
+        <div class="success" id="success-message">
+          You’re on the list. We’ll email you when early access opens.
+        </div>
+
+        <p class="small-note">
+          No spam. We’ll only contact you about early access and product updates.
+        </p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Review pull requests</h3>
+        <p>
+          Get prioritized feedback on bugs, edge cases, security risks, and
+          maintainability issues directly in GitHub.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Generate missing tests</h3>
+        <p>
+          Identify untested code paths and create focused unit tests for
+          changed functions.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Debug CI failures</h3>
+        <p>
+          Paste a failing test, stack trace, or CI log and get a likely root
+          cause with a suggested fix.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 CodeGuard AI. Built for engineering teams that want safer merges.
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("waitlist-form");
+    const successMessage = document.getElementById("success-message");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const submitButton = form.querySelector("button");
+      submitButton.disabled = true;
+      submitButton.textContent = "Joining...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMessage.style.display = "block";
+          submitButton.textContent = "Joined ✓";
+        } else {
+          submitButton.disabled = false;
+          submitButton.textContent = "Join waitlist";
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Join waitlist";
+        alert("Network error. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
