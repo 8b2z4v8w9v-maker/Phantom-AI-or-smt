@@ -8,3 +8,5 @@ def get_item(items, index):
 
 def safe_divide(a, b):
     return a / b
+def risky_parse(value):
+    return int(value)
